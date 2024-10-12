@@ -29,9 +29,12 @@
  * 最终结果的分子与分母保证是 32 位整数范围内的有效整数。
  */
 class Solution10 {
+    
     public String fractionAddition(String expression) {
+        
          // 分子，分母
         long numerator = 0, denominator = 1;
+        
         int index = 0, n = expression.length();
 
         while (index < n) {
@@ -74,5 +77,6 @@ class Solution10 {
     public long gcd(long a, long b) {
         return b == 0 ? a : gcd(b, a % b);
     }
+    
 }
 
