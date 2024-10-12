@@ -30,7 +30,8 @@
  */
 class Solution10 {
     public String fractionAddition(String expression) {
-        long numerator = 0, denominator = 1; // 分子，分母
+         // 分子，分母
+        long numerator = 0, denominator = 1;
         int index = 0, n = expression.length();
 
         while (index < n) {
@@ -46,7 +47,8 @@ class Solution10 {
                 index++;
             }
             numerator1 = sign * numerator1;
-            index++; // 跳过 '/'
+             // 跳过 '/'
+            index++;
 
             // 读取分母
             long denominator1 = 0;
@@ -55,7 +57,7 @@ class Solution10 {
                 index++;
             }
 
-            // 分数相加: a/b + c/d = (a*d + b*c) / (b*d)
+            // 分数相加:a/b + c/d = (a*d + b*c) / (b*d)
             numerator = numerator * denominator1 + numerator1 * denominator;
             denominator *= denominator1;
         }
@@ -63,8 +65,8 @@ class Solution10 {
         if (numerator == 0) {
             return "0/1";
         }
-
-        long gcdValue = gcd(Math.abs(numerator), denominator); // 获取最大公约数
+         // 获取最大公约数
+        long gcdValue = gcd(Math.abs(numerator), denominator);
         return (numerator / gcdValue) + "/" + (denominator / gcdValue);
     }
 
